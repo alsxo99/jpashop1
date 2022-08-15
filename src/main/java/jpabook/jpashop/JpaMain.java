@@ -1,5 +1,7 @@
 package jpabook.jpashop;
 
+import jpabook.jpashop.domain.Movie;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -15,6 +17,13 @@ public class JpaMain {
         tx.begin();
 
         try {
+
+            Movie movie = new Movie();
+            movie.setActor("톰 크루즈");
+            movie.setDirector("ㅇㅇ");
+            movie.setName("탑건:매버릭");
+
+            em.persist(movie);
 
             tx.commit();
 
